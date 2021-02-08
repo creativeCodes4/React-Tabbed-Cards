@@ -1,10 +1,15 @@
+// Importing Packages...
+
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
+
+// Declaring Transition...
 const transition = css`
   transition: transform 0.45s;
 `;
 
+// The Card Main Wrapper...
 const Card = styled.div`
   overflow: hidden;
   position: relative;
@@ -14,11 +19,13 @@ const Card = styled.div`
   border-radius: 1.2rem;
 `;
 
+// Header Row...
 const Row = styled.div`
   display: flex;
   position: relative;
 `;
 
+// Header Buttons...
 const Button = styled.button`
   padding: 1.2rem 2rem;
   display: flex;
@@ -40,6 +47,8 @@ const Button = styled.button`
   }
 `;
 
+// Card Content Holder...
+
 const Content = styled.div`
   position: absolute;
   height: 100%;
@@ -50,10 +59,14 @@ const Content = styled.div`
   ${transition};
 `;
 
+// Single Tab
+
 const Tab = styled.div`
   width: 300px;
   padding: 0rem 1rem;
 `;
+
+// Data Holder [Image,Name]...
 
 const Data = styled.div`
   display: flex;
@@ -72,7 +85,11 @@ const Data = styled.div`
   }
 `;
 
+// Available Tabs...
+
 const tabs = ['Front End', 'Back End'];
+
+// Tab Component...
 
 const Tabs = ({ active, setActive }) => {
   return (
@@ -85,6 +102,8 @@ const Tabs = ({ active, setActive }) => {
     </Row>
   );
 };
+
+// Wrapper Component (Main component to be exported)...
 
 const Wrapper = () => {
   const [active, setActive] = useState(0);
