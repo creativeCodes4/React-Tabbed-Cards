@@ -14,9 +14,9 @@ const Card = styled.div`
   overflow: hidden;
   position: relative;
   width: 280px;
-  height: 260px;
+  height: 280px;
   background: white;
-  border-radius: 1.2rem;
+  border-radius: 1.5rem;
 `;
 
 // Header Row...
@@ -27,7 +27,7 @@ const Row = styled.div`
 
 // Header Buttons...
 const Button = styled.button`
-  padding: 1.2rem 2rem;
+  padding: 1.3rem 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,8 +35,9 @@ const Button = styled.button`
   color: #4fc08d;
   outline: none;
   border: none;
-  border-bottom: 4px solid
-    ${(p) => (p.active ? rgba('#4fc08d', 0.95) : rgba('#4fc08d', 0.25))};
+  font-weight: ${(p) => (p.active ? 'bold' : '400')};
+  border-bottom: 3px solid
+    ${(p) => (p.active ? rgba('#4fc08d', 0.95) : rgba('#4fc08d', 0.15))};
   cursor: pointer;
   font-size: 1rem;
   background: ${(p) => (p.active ? rgba('#4fc08d', 0.05) : 'transparent')};
@@ -52,6 +53,7 @@ const Button = styled.button`
 const Content = styled.div`
   position: absolute;
   height: 100%;
+  padding: 0.6rem 0rem;
   display: flex;
   transform: translateX(
     ${(p) => (p.active === 0 ? 0 : `-${p.active * 300}`)}px
@@ -63,22 +65,22 @@ const Content = styled.div`
 
 const Tab = styled.div`
   width: 300px;
-  padding: 0rem 1rem;
 `;
 
 // Data Holder [Image,Name]...
 
 const Data = styled.div`
   display: flex;
+  padding: 0rem 1rem;
   align-items: center;
   margin: 0.5rem 0rem;
   cursor: pointer;
+  border-bottom: 1px dashed #f1f1f1;
   img {
     width: 52px;
     height: 52px;
     object-fit: cover;
     border-radius: 50%;
-    position: relative;
   }
   p {
     margin: 0rem 0rem 0rem 1rem;
